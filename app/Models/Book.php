@@ -63,5 +63,9 @@ class Book extends Model
         return $this->hasOne('App\Models\Category', 'id', 'category_id');
     }
     
+    public function bookUser()
+    {
+    return $this->hasMany(BookUser::class);
+    }
 
 }
