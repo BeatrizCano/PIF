@@ -35,11 +35,15 @@
                     <ul class="navbar-nav me-auto">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('books.index') }}">{{ __('Books') }}</a>                      
+                            <a class="nav-link" href="{{ route('books.index') }}">{{ __('Libros') }}</a>                      
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>                      
+                            <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categorias') }}</a>                      
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('book-users.index') }}">{{ __('Préstamos') }}</a>                      
                         </li>
 
                         <li class="nav-item">
