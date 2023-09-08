@@ -42,6 +42,10 @@
                             <a class="nav-link" href="{{ route('categories.index') }}">{{ __('Categories') }}</a>                      
                         </li>
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('book-loans.index') }}">{{ __('BookLoan') }}</a>                      
+                        </li>
+
                     </ul>
 
                     @endif

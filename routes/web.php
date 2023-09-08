@@ -23,6 +23,7 @@ Auth::routes();
 
 Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');
 Route::resource('categories', App\Http\Controllers\CategoryController::class)->middleware('auth');
+Route::resource('book-loans', App\Http\Controllers\BookLoanController::class)->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -30,7 +31,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', function () {
     return 'Bienvenido al panel de administración';
 })->middleware('auth.admin:admin');
-
 
 //Rutas para gestionar las publicaciones (posts)
 Route::middleware(['auth'])->group(function () {
