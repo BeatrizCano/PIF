@@ -14,6 +14,9 @@ class BookUser extends Model
     protected $fillable = [
         'book_id',
         'user_id',
+        'loan_date',
+        'return_date',
+        'status',
     ];
 
     public static $rules = [
@@ -31,5 +34,8 @@ class BookUser extends Model
     return $this->belongsTo(User::class, 'user_id');
     }
 
-
+    public function bookLoan()
+    {
+        return $this->hasOne(BookLoan::class, 'book_user_id');
+    }
 }
