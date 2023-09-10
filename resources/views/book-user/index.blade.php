@@ -39,6 +39,9 @@
                                     <th>Title</th>                                    
                                     <th>User Id</th>                                       
                                     <th>User Name</th>
+                                    <th>Loan Date</th>
+                                    <th>Return Date</th>
+                                    <th>Status</th>
                                     <th>Actions</th> <!-- Agregamos una columna para las acciones -->
                                 </tr>
                             </thead>
@@ -50,6 +53,10 @@
                                         <td>{{ $bookUser->book ? $bookUser->book->title : 'N/A' }}</td>                                        
                                         <td>{{ $bookUser->user_id }}</td>
                                         <td>{{ $bookUser->user ? $bookUser->user->name : 'N/A' }}</td>
+                                        <td>{{ $bookUser->bookLoan ? $bookUser->bookLoan->loan_date : 'N/A' }}</td>
+                                        <td>{{ $bookUser->bookLoan ? $bookUser->bookLoan->return_date : 'N/A' }}</td>
+                                        <td>{{ $bookUser->book ? $bookUser->book->status : 'N/A' }}</td>   
+
                                         <td>
                                             <form action="{{ route('book-users.destroy',$bookUser->id) }}" method="POST">
                                                 <a class="btn btn-info btn-sm" href="{{ route('book-users.show',$bookUser->id) }}">Show</a>

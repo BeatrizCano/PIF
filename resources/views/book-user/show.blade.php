@@ -36,6 +36,18 @@
                             <strong>User Name:</strong>
                             {{ $bookUser->user ? $bookUser->user->name : 'N/A' }}
                         </div>
+                        <div class="form-group">
+                            <strong>Loand Date:</strong>
+                            {{ $bookUser->bookLoan ? $bookUser->bookLoan->loan_date : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Return Date:</strong>
+                            {{ $bookUser->bookLoan ? $bookUser->bookLoan->return_date : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>State:</strong>
+                            {{ $bookUser->book->status ?? 'N/A' }}
+                        </div>
                     </div>
                 </div>
             </div>
