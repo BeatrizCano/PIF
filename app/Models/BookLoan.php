@@ -9,10 +9,12 @@ class BookLoan extends Model
 {
     use HasFactory;
 
-    public static $rules = [
-        'book_user_id' => 'required',
-        'loan_date' => 'required|date',
-        'return_date' => 'required|date|after:loan_date',
-    ];
-    
+    protected $fillable = ['loan_date', 'return_date']; 
+
+    protected $table = 'book_loans';
+
+    public function bookUser()
+    {
+        return $this->belongsTo(BookUser::class);
+    }
 }

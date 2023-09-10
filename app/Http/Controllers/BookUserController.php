@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\BookUser;
 use App\Models\User;
 use App\Models\Book;
+use App\Models\BookLoan;
 use Illuminate\Http\Request;
 
 /**
@@ -36,7 +37,11 @@ class BookUserController extends Controller
         $bookUser = new BookUser();
         $books = Book::pluck('title', 'id');
         $users = User::pluck('name', 'id');
-        return view('book-user.create', compact('bookUser', 'books', 'users'));
+        $loanDate = ''; // Asegúrate de inicializar la variable
+        $returnDate = ''; // Asegúrate de inicializar la variable
+        $status = ''; // Asegúrate de inicializar la variable
+
+        return view('book-user.create', compact('bookUser', 'books', 'users', 'loanDate','returnDate', 'status'));
     }
 
     /**
@@ -49,10 +54,28 @@ class BookUserController extends Controller
     {
         request()->validate(BookUser::$rules);
 
-        $bookUser = BookUser::create($request->all());
-
+        $bookUser = BookUser::create([
+            'book_id' => $request->input('book_id'),
+            'user_id' => $request->input('user_id'),
+        ]);
+    
+        if ($request->has('loan_date') && $request->has('return_date')) {
+            $bookUser->bookLoan()->create([
+                'loan_date' => $request->input('loan_date'),
+                'return_date' => $request->input('return_date'),
+            ]);
+        }
+    
+        if ($request->has('book_id')) {
+            $book = Book::find($request->input('book_id'));
+            $book->status = $request->input('status');
+            $book->save();
+        }
+    
         return redirect()->route('book-users.index')
             ->with('success', 'BookUser created successfully.');
+
+        
     }
 
     /**
@@ -80,10 +103,17 @@ class BookUserController extends Controller
         $books = Book::pluck('title', 'id');
         $users = User::pluck('name', 'id');
 
-        return view('book-user.edit', compact('bookUser', 'books', 'users'));
+        // Obtener los valores no vacíos
+        $book = $bookUser->book;
+        $status = $book->status ?? null;
+        $loanDate = $bookUser->bookLoan->loan_date ?? null;
+        $returnDate = $bookUser->bookLoan->return_date ?? null;
+
+        return view('book-user.edit', compact('bookUser', 'books', 'users', 'status', 'loanDate', 'returnDate'));
     }
 
     /**
+     * 
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
@@ -94,7 +124,26 @@ class BookUserController extends Controller
     {
         request()->validate(BookUser::$rules);
 
-        $bookUser->update($request->all());
+        // Asegúrate de que estás recibiendo los valores correctamente en $request
+        $loan_date = $request->input('loan_date');
+        $return_date = $request->input('return_date');
+
+        // Actualiza el registro de book_user
+        $bookUser->update([]);
+
+        // Actualiza el registro de book_loan
+        $bookUser->bookLoan()->updateOrCreate([], [
+            'loan_date' => $loan_date,
+            'return_date' => $return_date,
+        ]);
+
+        // Obtén el libro asociado y actualiza su estado solo si book_id está presente en la solicitud
+        if ($request->has('book_id')) {
+            $status = $request->input('status');
+            $book = Book::find($request->input('book_id'));
+            $book->status = $status;
+            $book->save();
+        }
 
         return redirect()->route('book-users.index')
             ->with('success', 'BookUser updated successfully');
