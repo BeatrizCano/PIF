@@ -53,5 +53,11 @@ class User extends Authenticatable
         return $this->belongsToMany(Role::class);
     }
 
+    public function bookUser()
+    {
+    return $this->hasMany(BookUser::class);
+    }
+
+
     //Otros metodos publicos del modelo...
 }
