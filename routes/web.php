@@ -39,3 +39,8 @@ Route::get('/admin', function () {
 Route::middleware(['auth'])->group(function () {
     Route::resource('posts', PostController::class);
 });
+
+Route::view('template', 'layouts.template')->name('template');
+Route::view('about', 'templates.about')->name('about');
+Route::view('store', 'templates.store')->name('store');
+Route::view('booksForm', 'templates.booksForm')->name('booksForm');
