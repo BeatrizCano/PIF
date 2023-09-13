@@ -20,7 +20,13 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-    <div id="app" class="py-lg-4">
+    <header>
+        <h1 class="site-heading text-center text-faded d-none d-lg-block">
+            <span class="site-heading-upper text-primary mb-3">Transmite tu conocimiento</span>
+            <span class="site-heading-lower">Administrador@</span>
+        </h1>
+    </header>
+    <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
