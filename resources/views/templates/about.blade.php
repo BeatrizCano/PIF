@@ -16,8 +16,8 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">A Free Bootstrap Business Theme</span>
-                <span class="site-heading-lower">Business Casual</span>
+                <span class="site-heading-upper text-primary mb-3">¿Quieres conocernos un poco más?</span>
+                <span class="site-heading-lower">Banco de Libros Fenix</span>
             </h1>
         </header>
         <!-- Navigation-->
@@ -26,11 +26,11 @@
                 <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('template') }}">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('about') }}">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('booksForm') }}">BooksForm</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('store') }}">Store</a></li>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('template') }}">Inicio</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('about') }}">Sobre Nosotr@s</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('yourBooks') }}">Tus Libros</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -43,14 +43,14 @@
                         <div class="col-xl-9 col-lg-10 mx-auto">
                             <div class="bg-faded rounded p-5">
                                 <h2 class="section-heading mb-4">
-                                    <span class="section-heading-upper">Strong Coffee, Strong Roots</span>
-                                    <span class="section-heading-lower">About Our Cafe</span>
+                                    <span class="section-heading-upper">Libros de texto, novelas, comics...</span>
+                                    <span class="section-heading-lower">Aceptamos toda clase de literatura</span>
                                 </h2>
-                                <p>Founded in 1987 by the Hernandez brothers, our establishment has been serving up rich coffee sourced from artisan farmers in various regions of South and Central America. We are dedicated to travelling the world, finding the best coffee, and bringing back to you here in our cafe.</p>
+                                <p>Comenzamos nuestra labor  de recuperar libros de segunda mano para darles una segunda vida en 2023. Somos una empresa joven, con grandes expectativas y centrada en distribuir el conocimiento a coste cero.</p>
                                 <p class="mb-0">
-                                    We guarantee that you will fall in
-                                    <em>lust</em>
-                                    with our decadent blends the moment you walk inside until you finish your last sip. Join us for your daily routine, an outing with friends, or simply just to enjoy some alone time.
+                                    Colaboramos con centros públicos y empresas privadas
+                                    <em>para</em>
+                                    descentralizar nuestro servicio de recogida y entrega de libros. Sabemos que en cada momento de la vida necesitamos diferentes tipos de historias y por eso aceptamos desde libros de texto, hasta comics, pasando por novelas, cuentos infantiles...
                                 </p>
                             </div>
                         </div>
@@ -59,7 +59,7 @@
             </div>
         </section>
         <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
+            <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fenix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
