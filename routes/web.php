@@ -44,3 +44,5 @@ Route::view('template', 'layouts.template')->name('template');
 Route::view('about', 'templates.about')->name('about');
 Route::view('contact', 'templates.contact')->name('contact');
 Route::view('yourBooks', 'templates.yourBooks')->name('yourBooks');
+
+Route::post('/send-form', 'FormController@sendForm')->name('send-form');

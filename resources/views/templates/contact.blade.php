@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Business Casual - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <title>Banco de Libros Fenix</title>
+        <link rel="icon" href="assets/icon.png" />
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
@@ -45,35 +45,46 @@
                                 <span class="section-heading-lower">Formulario de contacto</span>
                             </h2>
                             <div>
-                                <form id="contactForm" name="sentMessage" action="" method="post">
+                                <form id="contactForm" action="{{ route('send-form') }}" method="post">
+                                    @csrf <!--para proteger contra ataques de falsificación de solicitudes entre sitios (CSRF).-->
                                 <div class="form-floating mb-3">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingPassword" placeholder="nombre">
-                                        <label for="floatingPassword">Nombre</label>
+                                        <input type="text" name="name" class="form-control" id="floatingPassword" placeholder="nombre" required>
+                                        <label for="name">Nombre</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingPassword" placeholder="apellidos">
-                                        <label for="floatingPassword">Apellidos</label>
+                                        <input type="text" name="lastName"  class="form-control" id="floatingPassword" placeholder="apellidos" required>
+                                        <label for="lastName">Apellidos</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                                        <label for="floatingInput">Email</label>
+                                        <input type="email" name="email"  class="form-control" id="floatingInput" placeholder="nombre@ejemplo.com" required>
+                                        <label for="email">Email</label>
                                     </div>
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="floatingPassword" placeholder="asunto">
-                                        <label for="floatingPassword">Asunto</label>
+                                        <input type="text" name="issue"  class="form-control" id="floatingPassword" placeholder="asunto" required>
+                                        <label for="issue">Asunto</label>
                                     </div>
                                     <div class="form-floating">
-                                        <textarea class="form-control" placeholder="Deja tus comentarios aquí" id="floatingTextarea2" style="height: 100px"></textarea>
-                                        <label for="floatingTextarea2">Comentarios</label>
+                                        <textarea class="form-control" name="comments"  placeholder="Deja tus comentarios aquí" id="floatingTextarea2" style="height: 100px"></textarea>
+                                        <label for="comments">Comentarios</label>
                                     </div>
                                     <br>
                                     <div>
                                         <button type="submit" class="btn btn-primary">Submit</button>
-                                    </div>                                   
+                                    </div> 
+                                    <br>                                  
                                 </form>
+                                <div id="mesagge" style="display:none;">
+                                    ¡El formulario se ha enviado correctamente! ¡Gracias por contactar con nosotr@s! Nos pondremos en contacto con usted en menos de 24 horas.
+                                </div>
                             </div>
-                                   
+                            <!--Escucha el evento de envío del formulario (submit). Cuando el formulario se envía, evita el comportamiento predeterminado (recargar la página) usando event.preventDefault(). Luego, muestra el elemento con el id mensaje configurando su estilo display a block, lo que lo hará visible.-->
+                            <script>
+                                 document.getElementById("contactForm").addEventListener("submit", function(event) {
+                                    event.preventDefault();
+                                    document.getElementById("mesagge").style.display = "block";
+                                 });
+                            </script>      
                         </div>
                     </div>
                 </div>
