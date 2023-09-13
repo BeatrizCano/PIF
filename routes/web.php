@@ -42,5 +42,5 @@ Route::middleware(['auth'])->group(function () {
 
 Route::view('template', 'layouts.template')->name('template');
 Route::view('about', 'templates.about')->name('about');
-Route::view('store', 'templates.store')->name('store');
-Route::view('booksForm', 'templates.booksForm')->name('booksForm');
+Route::view('contact', 'templates.contact')->name('contact');
+Route::view('yourBooks', 'templates.yourBooks')->name('yourBooks');

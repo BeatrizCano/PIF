@@ -27,10 +27,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('template') }}">Home</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('about') }}">About</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('booksForm') }}">BooksForm</a></li>
-                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('store') }}">Store</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('template') }}">Inicio</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('about') }}">Sobre Nosotr@s</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('yourBooks') }}">Tus Libros</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,11 +41,11 @@
                     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/books_intro.jpg" alt="..." />
                     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                         <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">Fresh Coffee</span>
-                            <span class="section-heading-lower">Worth Drinking</span>
+                            <span class="section-heading-upper">¡Colabora con nosotros!</span>
+                            <span class="section-heading-lower">Damos una segunda vida a tus viejos libros</span>
                         </h2>
-                        <p class="mb-3">Every cup of our quality artisan coffee starts with locally sourced, hand picked ingredients. Once you try it, our coffee will be a blissful addition to your everyday morning routine - we guarantee it!</p>
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">Visit Us Today!</a></div>
+                        <p class="mb-3">Somos una organización sin ánmio de lucro enfocada a recoger, catalogar y redistribuir libros de segunda mano entre quién más lo necesita. Aceptamos donaciones de empresas, editoriales, asociaciones o particulares.</p>
+                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">¡Sigue leyendo!</a></div>
                     </div>
                 </div>
             </div>
@@ -56,17 +56,17 @@
                     <div class="col-xl-9 mx-auto">
                         <div class="cta-inner bg-faded text-center rounded">
                             <h2 class="section-heading mb-4">
-                                <span class="section-heading-upper">Our Promise</span>
-                                <span class="section-heading-lower">To You</span>
+                                <span class="section-heading-upper">Nuestro compromiso</span>
+                                <span class="section-heading-lower">Para ti</span>
                             </h2>
-                            <p class="mb-0">When you walk into our shop to start your day, we are dedicated to providing you with friendly service, a welcoming atmosphere, and above all else, excellent products made with the highest quality ingredients. If you are not satisfied, please let us know and we will do whatever we can to make things right!</p>
+                            <p class="mb-0">El Banco de Libros Fenix se ha creado con el objetivo de llevar la cultura a todos los rincones del mundo de manera gratuita. Nuestros equipo colabora de manera desinteresada en esta labor para que este ciclo nunca se detenga. Aprovechamos los recursos que ya existen para cumplir con nuestra misión. ¡Únete a nosotr@s!</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <footer class="footer text-faded text-center py-5">
-            <div class="container"><p class="m-0 small">Copyright &copy; Your Website 2023</p></div>
+            <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fenix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
