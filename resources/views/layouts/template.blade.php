@@ -41,8 +41,8 @@
                     <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="assets/img/books_intro.jpg" alt="..." />
                     <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                         <h2 class="section-heading mb-4">
-                            <span class="section-heading-upper">¡Colabora con nosotros!</span>
-                            <span class="section-heading-lower">Damos una segunda vida a tus viejos libros</span>
+                            <span class="section-heading-upper">Damos una segunda vida a tus viejos libros</span>
+                            <span class="section-heading-lower">¡Colabora!</span>
                         </h2>
                         <p class="mb-3">Somos una organización sin ánmio de lucro enfocada a recoger, catalogar y redistribuir libros de segunda mano entre quién más lo necesita. Aceptamos donaciones de empresas, editoriales, asociaciones o particulares.</p>
                         <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">¡Sigue leyendo!</a></div>
