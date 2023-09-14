@@ -59,10 +59,11 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('status') }}
-            {{ Form::text('status', $book->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Status']) }}
+            {{ Form::label('status', 'Estado') }}
+            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $book->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : '')]) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
 
     </div>
     <div class="box-footer mt20">
