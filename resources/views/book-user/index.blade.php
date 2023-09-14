@@ -59,13 +59,14 @@
 
                                         <td>
                                             <form action="{{ route('book-users.destroy',$bookUser->id) }}" method="POST">
-                                                <a class="btn btn-info btn-sm" href="{{ route('book-users.show',$bookUser->id) }}">Show</a>
-                                                <a class="btn btn-primary btn-sm" href="{{ route('book-users.edit',$bookUser->id) }}">Edit</a>
+                                                <a class="btn btn-success btn-sm custom-btn" href="{{ route('book-users.show',$bookUser->id) }}">Show</a>
+                                                <a class="btn btn-primary btn-sm custom-btn" href="{{ route('book-users.edit',$bookUser->id) }}">Edit</a>
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm custom-btn">Delete</button>
                                             </form>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>

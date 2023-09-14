@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
+    @vite(['resources/js/app.js'])
+    
 <body>
     <header>
         <h1 class="site-heading text-center text-faded d-none d-lg-block">
@@ -97,9 +97,14 @@
                 </div>
             </div>
         </nav>
-        <main class="py-5">
-            @yield('content')           
-        </main>
-    </div>
+        <main class="py-5 page-section cta">     
+            <div class="col-xl-9 mx-auto">
+                <div class="cta-inner bg-faded text-center rounded">
+                    <div class="container cta-inner bg-faded">
+            @yield('content') 
+                 </div>
+                </div>
+            </div>
+        </main>    
 </body>
 </html>

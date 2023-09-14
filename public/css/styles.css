@@ -11027,3 +11027,10 @@ p {
 .address strong {
   font-size: 1.2rem;
 }
+
+.custom-btn {
+  width: 70px; /* Ajusta el ancho a tu preferencia */
+  height: 30px; /* Ajusta la altura a tu preferencia */
+  margin-bottom: 3px;
+  /* Otros estilos personalizados si es necesario */
+}
