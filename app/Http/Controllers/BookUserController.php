@@ -73,7 +73,7 @@ class BookUserController extends Controller
         }
     
         return redirect()->route('book-users.index')
-            ->with('success', 'BookUser created successfully.');
+            ->with('success', 'Préstamo creado exitosamente.');
 
         
     }
@@ -150,7 +150,7 @@ class BookUserController extends Controller
         }
     
         return redirect()->route('book-users.index')
-            ->with('success', 'BookUser updated successfully');
+            ->with('success', 'Préstamo editado exitosamente.');
     }
     
     /**
@@ -163,6 +163,6 @@ class BookUserController extends Controller
         $bookUser = BookUser::find($id)->delete();
 
         return redirect()->route('book-users.index')
-            ->with('success', 'BookUser deleted successfully');
+            ->with('success', 'Préstamo eliminado exitosamente');
     }
 }
