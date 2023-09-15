@@ -78,7 +78,7 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $categories = Category::pluck('name', 'id');
-        $status = ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'];
+        $status = $book->status ?? null;
 
         return view('book.edit', compact('book', 'categories', 'status'));
     }
