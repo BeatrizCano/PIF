@@ -25,10 +25,6 @@
                             {{ $book->category_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Name:</strong>
-                            {{ $book->title }}
-                        </div>
-                        <div class="form-group">
                             <strong>Authors:</strong>
                             {{ $book->authors }}
                         </div>
@@ -67,6 +63,10 @@
                         <div class="form-group">
                             <strong>Status:</strong>
                             {{ $book->status }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Title:</strong>
+                            {{ $book->title }}
                         </div>
 
                     </div>

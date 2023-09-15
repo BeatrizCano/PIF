@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');
+Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');//sino funciona probar a quitar middleware
 Route::resource('categories', App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::resource('book-loans', App\Http\Controllers\BookLoanController::class)->middleware('auth');
 Route::resource('book-users', App\Http\Controllers\BookUserController::class)->middleware('auth');

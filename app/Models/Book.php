@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $category_id
- * @property $name
  * @property $authors
  * @property $description
  * @property $language
@@ -22,7 +21,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property $status
  * @property $created_at
  * @property $updated_at
+ * @property $title
  *
+ * @property BookUser[] $bookUsers
  * @property Category $category
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -32,7 +33,6 @@ class Book extends Model
     
     static $rules = [
 		'category_id' => 'required',
-		'name' => 'required',
 		'authors' => 'required',
 		'description' => 'required',
 		'language' => 'required',
@@ -43,6 +43,7 @@ class Book extends Model
 		'price' => 'required',
 		'stock' => 'required',
 		'status' => 'required',
+		'title' => 'required',
     ];
 
     protected $perPage = 20;
@@ -52,9 +53,17 @@ class Book extends Model
      *
      * @var array
      */
-    protected $fillable = ['category_id','name','authors','description','language','publisher','year','isbn','image','price','stock','status'];
+    protected $fillable = ['category_id','authors','description','language','publisher','year','isbn','image','price','stock','status','title'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function bookUsers()
+    {
+        return $this->hasMany('App\Models\BookUser', 'book_id', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -63,9 +72,5 @@ class Book extends Model
         return $this->hasOne('App\Models\Category', 'id', 'category_id');
     }
     
-    public function bookUser()
-    {
-    return $this->hasMany(BookUser::class);
-    }
 
 }
