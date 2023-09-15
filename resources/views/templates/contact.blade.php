@@ -23,7 +23,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
             <div class="container">
-                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Start Bootstrap</a>
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">Banco de Libros Fenix</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto">
@@ -35,6 +35,29 @@
                 </div>
             </div>
         </nav>
+        <section class="page-section about-heading">
+            <div class="container">
+                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/contact.jpg" alt="..." />
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-10 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">
+                                    <span class="section-heading-upper">Colabora con la causa</span>
+                                    <span class="section-heading-lower">¡Te esperamos!</span>
+                                </h2>
+                                <p>Esperamos que te haya gustado nuestra iniciativa sin ánimo de lucro. ¿Te animas a participar? Hay muchas formas de colaborar, puedes formar parte de nuestro equipo, puedes donar los libros que ya no desees conservar, si eres una empresa o centro puedes ofrecerte como punto de recogida y entrega de libros, si eres una editorial y quieres donar libros de texto para los estudiantes...Hay muchas maneras, ¡Elige la tuya!</p>
+                                <p class="mb-0">
+                                    ¡Por supuesto, también te ayudamos a ti!
+                                    <em>¿Necesitas libros</em>
+                                    para fomentar la lectura entre los más pequeños de la casa, en tu colegio, biblioteca, centro social, comunidad de vecinos...? Si eliges colaborar con nosotros o bien necesitas un préstamo de libros, contacta con nosotr@s a través de nuestro formulario y nos pondremos en contacto contigo en menos de 24 horas. Un cordial saludo y !Seguid disfrutando de la lectura!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="page-section cta">
             <div class="container">
                 <div class="row">
@@ -85,29 +108,6 @@
                                     document.getElementById("mesagge").style.display = "block";
                                  });
                             </script>      
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="page-section about-heading">
-            <div class="container">
-                <img class="img-fluid rounded about-heading-img mb-3 mb-lg-0" src="assets/img/contact.jpg" alt="..." />
-                <div class="about-heading-content">
-                    <div class="row">
-                        <div class="col-xl-9 col-lg-10 mx-auto">
-                            <div class="bg-faded rounded p-5">
-                                <h2 class="section-heading mb-4">
-                                    <span class="section-heading-upper">Colabora con la causa</span>
-                                    <span class="section-heading-lower">¡Te esperamos!</span>
-                                </h2>
-                                <p>Esperamos que te haya gustado nuestra iniciativa sin ánimo de lucro. ¿Te animas a participar? Hay muchas formas de colaborar, puedes formar parte de nuestro equipo, puedes donar los libros que ya no desees conservar, si eres una empresa o centro puedes ofrecerte como punto de recogida y entrega de libros, si eres una editorial y quieres donar libros de texto para los estudiantes...Hay muchas maneras, ¡Elige la tuya!</p>
-                                <p class="mb-0">
-                                    ¡Por supuesto, también te ayudamos a ti!
-                                    <em>¿Necesitas libros</em>
-                                    para fomentar la lectura entre los más pequeños de la casa, en tu colegio, biblioteca, centro social, comunidad de vecinos...? Si eliges colaborar con nosotros o bien necesitas un préstamo de libros, contacta con nosotr@s a través de nuestro formulario y nos pondremos en contacto contigo en menos de 24 horas. Un cordial saludo y !Seguid disfrutando de la lectura!
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
