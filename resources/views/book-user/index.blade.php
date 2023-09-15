@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Book User') }}
+                                {{ __('Préstamos') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('book-users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -35,14 +35,14 @@
                             <thead class="thead">
                                 <tr>
                                     <th>No</th>
-                                    <th>Book Id</th>
-                                    <th>Title</th>                                    
-                                    <th>User Id</th>                                       
-                                    <th>User Name</th>
-                                    <th>Loan Date</th>
-                                    <th>Return Date</th>
-                                    <th>Status</th>
-                                    <th>Actions</th> <!-- Agregamos una columna para las acciones -->
+                                    <th>Libro Id</th>
+                                    <th>Título Libro</th>                                    
+                                    <th>Usuario Id</th>                                       
+                                    <th>Nombre Usuario</th>
+                                    <th>Fecha Entrega</th>
+                                    <th>Fecha Devolución</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th> <!-- Agregamos una columna para las acciones -->
                                 </tr>
                             </thead>
                             <tbody>
@@ -59,11 +59,11 @@
 
                                         <td>
                                             <form action="{{ route('book-users.destroy',$bookUser->id) }}" method="POST">
-                                                <a class="btn btn-success btn-sm custom-btn" href="{{ route('book-users.show',$bookUser->id) }}">Show</a>
-                                                <a class="btn btn-primary btn-sm custom-btn" href="{{ route('book-users.edit',$bookUser->id) }}">Edit</a>
+                                                <a class="btn btn-success btn-sm custom-btn" href="{{ route('book-users.show',$bookUser->id) }}">Ver</a>
+                                                <a class="btn btn-primary btn-sm custom-btn" href="{{ route('book-users.edit',$bookUser->id) }}">Editar</a>
                                                 @csrf
                                                 @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm custom-btn">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm custom-btn">Borrar</button>
                                             </form>
                                         </td>
 
