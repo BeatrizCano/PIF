@@ -34,7 +34,9 @@ class BookController extends Controller
     {
         $book = new Book();
         $categories = Category::pluck('name', 'id');
-        return view('book.create', compact('book', 'categories'));
+        $status = ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'];
+
+        return view('book.create', compact('book', 'categories', 'status'));
     }
 
     /**
@@ -76,8 +78,9 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $categories = Category::pluck('name', 'id');
+        $status = ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'];
 
-        return view('book.edit', compact('book', 'categories'));
+        return view('book.edit', compact('book', 'categories', 'status'));
     }
 
     /**

@@ -1,10 +1,9 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
 
         <div class="form-group">
             {{ Form::label('category_id') }}
-            {{ Form::select('category_id', $categories , $book->category_id, ['class' => 'form-control' . ($errors->has('category_id') ? ' is-invalid' : ''), 'placeholder' => 'Category Id']) }}
+            {{ Form::select('category_id', $categories,  $book->category_id, ['class' => 'form-control' . ($errors->has('category_id') ? ' is-invalid' : ''), 'placeholder' => 'Category Id']) }}
             {!! $errors->first('category_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
@@ -13,6 +12,7 @@
             {{ Form::text('title', $book->title, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : ''), 'placeholder' => 'Title']) }}
             {!! $errors->first('title', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
             {{ Form::label('authors') }}
             {{ Form::text('authors', $book->authors, ['class' => 'form-control' . ($errors->has('authors') ? ' is-invalid' : ''), 'placeholder' => 'Authors']) }}
@@ -59,11 +59,10 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('status', 'Estado') }}
-            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $book->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : '')]) }}
+            {{ Form::label('status') }}
+            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un estado']) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
 
     </div>
     <div class="box-footer mt20">

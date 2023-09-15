@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Category</th>
-										<th>Title</th>
+                                        <th>Title</th>
 										<th>Authors</th>
 										<th>Description</th>
 										<th>Language</th>
@@ -47,7 +47,7 @@
 										<th>Image</th>
 										<th>Price</th>
 										<th>Stock</th>
-										<th>Status</th>
+										<th>Status</th>										
 
                                         <th></th>
                                     </tr>
@@ -58,11 +58,10 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>
-
-                                                {{ $book->category->name}}
+                                                {{ $book->category->name }}
                                             </td>
 
-											<td>{{ $book->name }}</td>
+                                            <td>{{ $book->title }}</td>
 											<td>{{ $book->authors }}</td>
 											<td>{{ $book->description }}</td>
 											<td>{{ $book->language }}</td>
@@ -72,11 +71,11 @@
 											<td>{{ $book->image }}</td>
 											<td>{{ $book->price }}</td>
 											<td>{{ $book->stock }}</td>
-											<td>{{ $book->status }}</td>
+											<td>{{ $book->status }}</td>											
 
                                             <td>
                                                 <form action="{{ route('books.destroy',$book->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary custom-btn " href="{{ route('books.show',$book->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-primary custom-btn" href="{{ route('books.show',$book->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     <a class="btn btn-sm btn-success custom-btn" href="{{ route('books.edit',$book->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
