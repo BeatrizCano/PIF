@@ -17,6 +17,7 @@
                         <div class="float-right">
                             <a class="btn btn-primary btn-sm custom-btn" href="{{ route('books.index') }}"> {{ __('Volver') }}</a>
                         </div>
+                        <br>
                     </div>
 
                     <div class="card-body">
