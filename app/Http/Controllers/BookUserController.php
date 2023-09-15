@@ -99,18 +99,19 @@ class BookUserController extends Controller
      */
     public function edit($id)
     {
-        $bookUser = BookUser::find($id);
+        $bookUser = BookUser::with('book', 'user', 'bookLoan')->find($id);
         $books = Book::pluck('title', 'id');
         $users = User::pluck('name', 'id');
 
         // Obtener los valores no vacíos
         $book = $bookUser->book;
-        $status = $book->status ?? null;
+        $status = $bookUser->status ?? null;
         $loanDate = $bookUser->bookLoan->loan_date ?? null;
         $returnDate = $bookUser->bookLoan->return_date ?? null;
 
         return view('book-user.edit', compact('bookUser', 'books', 'users', 'status', 'loanDate', 'returnDate'));
     }
+
 
     /**
      * 
@@ -123,20 +124,23 @@ class BookUserController extends Controller
     public function update(Request $request, BookUser $bookUser)
     {
         request()->validate(BookUser::$rules);
-
+    
         // Asegúrate de que estás recibiendo los valores correctamente en $request
         $loan_date = $request->input('loan_date');
         $return_date = $request->input('return_date');
-
+    
         // Actualiza el registro de book_user
-        $bookUser->update([]);
-
+        $bookUser->update([
+            'book_id' => $request->input('book_id'),
+            'user_id' => $request->input('user_id'),
+        ]);
+    
         // Actualiza el registro de book_loan
         $bookUser->bookLoan()->updateOrCreate([], [
             'loan_date' => $loan_date,
             'return_date' => $return_date,
         ]);
-
+    
         // Obtén el libro asociado y actualiza su estado solo si book_id está presente en la solicitud
         if ($request->has('book_id')) {
             $status = $request->input('status');
@@ -144,11 +148,11 @@ class BookUserController extends Controller
             $book->status = $status;
             $book->save();
         }
-
+    
         return redirect()->route('book-users.index')
             ->with('success', 'BookUser updated successfully');
     }
-
+    
     /**
      * @param int $id
      * @return \Illuminate\Http\RedirectResponse
