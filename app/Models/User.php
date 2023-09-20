@@ -2,62 +2,56 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\Role;
+
 
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'name',
         'email',
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
 
-     /**
-     * Define la relación muchos a muchos entre usuarios y roles.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
+    public function isAdmin()
+    {
+        return $this->roles()->where('name', 'admin')->exists();
+    }
+
     public function roles() 
     {
         return $this->belongsToMany(Role::class);
     }
 
-    public function bookUser()
+    public function assignRole($roleName)
     {
-    return $this->hasMany(BookUser::class);
+        $role = Role::where('name', $roleName)->first();
+
+        if ($role) {
+            $this->roles()->sync([$role->id]);
+        }
     }
 
+    public function bookUser()
+    {
+        return $this->hasMany(BookUser::class);
+    }
 
-    //Otros metodos publicos del modelo...
+    // Otros métodos públicos del modelo...
 }

@@ -31,6 +31,17 @@
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('about') }}">Sobre Nosotr@s</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('yourBooks') }}">Tus Libros</a></li>
                         <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('contact') }}">Contacto</a></li>
+                        @guest
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{{ route('login') }}">Iniciar Sesión</a></li>
+                    @else
+                        <li class="nav-item px-lg-4">
+                        <form action="{{ route('logout') }}" method="POST" class="nav-item px-lg-4">
+                            @csrf
+                            <button type="submit" class="btn btn-link nav-link text-uppercase">Cerrar sesión</button>
+                        </form>
+                        </li>
+                    @endguest
+                    
                     </ul>
                 </div>
             </div>

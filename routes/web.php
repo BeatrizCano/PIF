@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\HomeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome'); // O la vista que desees mostrar
+});
+
 Auth::routes();
 
 Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');//sino funciona probar a quitar middleware
@@ -29,6 +36,7 @@ Route::resource('book-loans', App\Http\Controllers\BookLoanController::class)->m
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 //Restringir el acceso a la ruta "/admin"
 Route::get('/admin', function () {
@@ -46,3 +54,6 @@ Route::view('contact', 'templates.contact')->name('contact');
 Route::view('yourBooks', 'templates.yourBooks')->name('yourBooks');
 
 Route::post('/send-form', 'FormController@sendForm')->name('send-form');
+
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
