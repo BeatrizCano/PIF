@@ -49,17 +49,29 @@
 											<td>{{ $category->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
+                                                <form action="{{ route('categories.destroy',$category->id) }}" method="POST" id="deleteForm{{ $category->id }}">
                                                     <a class="btn btn-sm btn-primary custom-btn" href="{{ route('categories.show',$category->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
                                                     <a class="btn btn-sm btn-success custom-btn" href="{{ route('categories.edit',$category->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm custom-btn"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
+                                                    <button type="button" class="btn btn-danger btn-sm custom-btn" onclick="confirmDelete({{ $category->id }})"><i class="fa fa-fw fa-trash"></i>{{_('Borrar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
+
+                                <script>
+                                    function confirmDelete(categoryId) {
+                                        if (confirm('¿Está seguro de que quiere eliminar este registro? Tenga en cuenta que se eliminarán todos los libros y prestamos asociados a dicha categoría. Recuerde que también puede "editar" la categoría a su gusto.')) {
+                                            // Si el usuario hace clic en "Aceptar", envía el formulario
+                                            document.getElementById('deleteForm' + categoryId).submit();
+                                        } else {
+                                            // Si el usuario hace clic en "Cancelar", no hace nada
+                                            return false;
+                                        }
+                                    }
+                            </script>
                             </table>
                         </div>
                     </div>
