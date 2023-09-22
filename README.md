@@ -1,4 +1,4 @@
-##Proyecto Banco de Libros Fénix
+<h1>Proyecto Banco de Libros Fénix</h1>
 <p>Este proyecto de Laravel se centra en la gestión de un banco de libros o biblioteca, con dos áreas principales: una para usuarios y otra para administradores. Además de una API que alimenta la información que se muestra en la web.</p>
 
 <h2>Características Destacadas</h2>
@@ -55,6 +55,4 @@
 
 <h2>API</h2>
 <p>La API proporciona acceso a los datos de libros, usuarios, préstamos y más.</p>
-
-<h2>[Documentación de la API](README_API.md)</h2>
-<p>Documentación detallada sobre como interactuar con la API del proyecto</p>
+<p>Documentación detallada sobre como interactuar con la API del proyecto: Readme_API.md</p>
