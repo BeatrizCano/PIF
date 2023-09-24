@@ -56,11 +56,15 @@
 
 <h2>Testing</h2>
 
-<p>Se han testeado las funcionalidades del CRUD "book" usando phpUnit. Ha pasado las pruebas satisfactoriamente.</p>
-<p>En la segunda fase, se creará una base de datos separada para las pruebas y otros requisitos necesarios para mantener la integridad de la base de datos principal antes de continuar con el testing.</p>
+<ul>
+    <li>Se han testeado las funcionalidades del CRUD "book" usando phpUnit. Ha pasado las pruebas satisfactoriamente.</li>
+    <li>En la segunda fase, se creará una base de datos separada para las pruebas y otros requisitos necesarios para mantener la integridad de la base de datos principal antes de continuar con el testing.</li>
+</ul>
 
 
 <h2>API</h2>
 
-<p>La API proporciona acceso a los datos de libros, usuarios, préstamos y más.</p>
-<p>Documentación detallada sobre como interactuar con la API del proyecto: Readme_API.md</p>
+<ul>
+<li>La API proporciona acceso a los datos de libros, usuarios, préstamos y más.</li>
+<li>Documentación detallada sobre como interactuar con la API del proyecto: Readme_API.md</li>
+</ul>
