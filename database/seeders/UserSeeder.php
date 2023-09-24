@@ -24,7 +24,7 @@ class UserSeeder extends Seeder
 
        // Crear usuario administrador
        $adminRole = Role::where('name', 'admin')->first();
-       $userAdmin = User::create(['name' => 'Administrador', 'email' => 'admin@example.com', 'password' => bcrypt('admin')]);
+       $userAdmin = User::create(['name' => 'Admin', 'email' => 'admin@example.com', 'password' => bcrypt('admin')]);
        $userAdmin->roles()->attach([$adminRole->id]);
 
        //...crear más usuarios...

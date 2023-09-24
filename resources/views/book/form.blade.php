@@ -1,41 +1,41 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
 
         <div class="form-group">
-            {{ Form::label('category_id') }}
-            {{ Form::select('category_id', $categories , $book->category_id, ['class' => 'form-control' . ($errors->has('category_id') ? ' is-invalid' : ''), 'placeholder' => 'Category Id']) }}
+            {{ Form::label('categoría id') }}
+            {{ Form::select('category_id', $categories,  $book->category_id, ['class' => 'form-control' . ($errors->has('category_id') ? ' is-invalid' : ''), 'placeholder' => 'Categoría Id']) }}
             {!! $errors->first('category_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
         <div class="form-group">
-            {{ Form::label('title') }}
-            {{ Form::text('title', $book->title, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : ''), 'placeholder' => 'Title']) }}
+            {{ Form::label('título') }}
+            {{ Form::text('title', $book->title, ['class' => 'form-control' . ($errors->has('title') ? ' is-invalid' : ''), 'placeholder' => 'Título']) }}
             {!! $errors->first('title', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
         <div class="form-group">
-            {{ Form::label('authors') }}
-            {{ Form::text('authors', $book->authors, ['class' => 'form-control' . ($errors->has('authors') ? ' is-invalid' : ''), 'placeholder' => 'Authors']) }}
+            {{ Form::label('autor@s') }}
+            {{ Form::text('authors', $book->authors, ['class' => 'form-control' . ($errors->has('authors') ? ' is-invalid' : ''), 'placeholder' => 'Autores']) }}
             {!! $errors->first('authors', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('description') }}
-            {{ Form::text('description', $book->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Description']) }}
+            {{ Form::label('descripción') }}
+            {{ Form::text('description', $book->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Descripción']) }}
             {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('language') }}
-            {{ Form::text('language', $book->language, ['class' => 'form-control' . ($errors->has('language') ? ' is-invalid' : ''), 'placeholder' => 'Language']) }}
+            {{ Form::label('idioma') }}
+            {{ Form::text('language', $book->language, ['class' => 'form-control' . ($errors->has('language') ? ' is-invalid' : ''), 'placeholder' => 'Idioma']) }}
             {!! $errors->first('language', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('publisher') }}
-            {{ Form::text('publisher', $book->publisher, ['class' => 'form-control' . ($errors->has('publisher') ? ' is-invalid' : ''), 'placeholder' => 'Publisher']) }}
+            {{ Form::label('editorial') }}
+            {{ Form::text('publisher', $book->publisher, ['class' => 'form-control' . ($errors->has('publisher') ? ' is-invalid' : ''), 'placeholder' => 'Editorial']) }}
             {!! $errors->first('publisher', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('year') }}
-            {{ Form::text('year', $book->year, ['class' => 'form-control' . ($errors->has('year') ? ' is-invalid' : ''), 'placeholder' => 'Year']) }}
+            {{ Form::label('año') }}
+            {{ Form::text('year', $book->year, ['class' => 'form-control' . ($errors->has('year') ? ' is-invalid' : ''), 'placeholder' => 'Año']) }}
             {!! $errors->first('year', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -44,13 +44,13 @@
             {!! $errors->first('isbn', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('image') }}
-            {{ Form::text('image', $book->image, ['class' => 'form-control' . ($errors->has('image') ? ' is-invalid' : ''), 'placeholder' => 'Image']) }}
+            {{ Form::label('imágen') }}
+            {{ Form::text('image', $book->image, ['class' => 'form-control' . ($errors->has('image') ? ' is-invalid' : ''), 'placeholder' => 'Imágen']) }}
             {!! $errors->first('image', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('price') }}
-            {{ Form::text('price', $book->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}
+            {{ Form::label('precio') }}
+            {{ Form::text('price', $book->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Precio']) }}
             {!! $errors->first('price', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -59,13 +59,13 @@
             {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('status') }}
-            {{ Form::text('status', $book->status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Status']) }}
+            {{ Form::label('estado') }}
+            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un estado']) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
-
+    <br>
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Envíar') }}</button>
     </div>
 </div>

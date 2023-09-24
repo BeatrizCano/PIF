@@ -34,7 +34,9 @@ class BookController extends Controller
     {
         $book = new Book();
         $categories = Category::pluck('name', 'id');
-        return view('book.create', compact('book', 'categories'));
+        $status = ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'];
+
+        return view('book.create', compact('book', 'categories', 'status'));
     }
 
     /**
@@ -50,7 +52,7 @@ class BookController extends Controller
         $book = Book::create($request->all());
 
         return redirect()->route('books.index')
-            ->with('success', 'Book created successfully.');
+            ->with('success', 'Libro creado exitosamente.');
     }
 
     /**
@@ -76,8 +78,9 @@ class BookController extends Controller
     {
         $book = Book::find($id);
         $categories = Category::pluck('name', 'id');
+        $status = $book->status ?? null;
 
-        return view('book.edit', compact('book', 'categories'));
+        return view('book.edit', compact('book', 'categories', 'status'));
     }
 
     /**
@@ -94,7 +97,7 @@ class BookController extends Controller
         $book->update($request->all());
 
         return redirect()->route('books.index')
-            ->with('success', 'Book updated successfully');
+            ->with('success', 'Libro editado exitosamente.');
     }
 
     /**
@@ -107,6 +110,6 @@ class BookController extends Controller
         $book = Book::find($id)->delete();
 
         return redirect()->route('books.index')
-            ->with('success', 'Book deleted successfully');
+            ->with('success', 'Libro borrado exitosamente.');
     }
 }

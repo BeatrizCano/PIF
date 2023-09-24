@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
+
 
 class HomeController extends Controller
 {
@@ -22,7 +24,16 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+{
+    if (auth()->check()) {
+        if (auth()->user()->isAdmin()) {
+            return view('home'); // Vista para administradores
+        } else {
+            return view('welcome'); // Vista para usuarios normales
+        }
     }
+
+    return view('auth.login'); // Si no está autenticado, redirige al login
+}
+
 }

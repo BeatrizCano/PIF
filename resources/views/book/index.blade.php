@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Book') }}
+                                {{ __('Libro') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('books.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -36,18 +36,18 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Category</th>
-										<th>Title</th>
-										<th>Authors</th>
-										<th>Description</th>
-										<th>Language</th>
-										<th>Publisher</th>
-										<th>Year</th>
+										<th>Categoría</th>
+                                        <th>Título</th>
+										<th>Autor@s</th>
+										<th>Descripción</th>
+										<th>Idioma</th>
+										<th>Editorial</th>
+										<th>Año</th>
 										<th>Isbn</th>
-										<th>Image</th>
-										<th>Price</th>
+										<th>Imágen</th>
+										<th>Precio</th>
 										<th>Stock</th>
-										<th>Status</th>
+										<th>Estado</th>										
 
                                         <th></th>
                                     </tr>
@@ -58,11 +58,10 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>
-
-                                                {{ $book->category->name}}
+                                                {{ $book->category->name }}
                                             </td>
 
-											<td>{{ $book->name }}</td>
+                                            <td>{{ $book->title }}</td>
 											<td>{{ $book->authors }}</td>
 											<td>{{ $book->description }}</td>
 											<td>{{ $book->language }}</td>
@@ -72,15 +71,15 @@
 											<td>{{ $book->image }}</td>
 											<td>{{ $book->price }}</td>
 											<td>{{ $book->stock }}</td>
-											<td>{{ $book->status }}</td>
+											<td>{{ $book->status }}</td>											
 
                                             <td>
                                                 <form action="{{ route('books.destroy',$book->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('books.show',$book->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('books.edit',$book->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary custom-btn" href="{{ route('books.show',$book->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-success custom-btn" href="{{ route('books.edit',$book->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm custom-btn"><i class="fa fa-fw fa-trash"></i> {{ __('Borrar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
