@@ -30,7 +30,6 @@ class ApiCategoryController extends Controller
         
         $request->validate([
             'name' => 'required|string|max:255',           
-            // Agrega otras reglas de validación según tus necesidades
         ]);
 
       
@@ -47,10 +46,8 @@ class ApiCategoryController extends Controller
             return response()->json(['message' => 'No se encontró la categoría'], 404); 
         }
 
-        // Validar los datos de entrada (del formulario)
         $request->validate([
             'name' => 'string',
-            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
        
         $category->update($request->all());

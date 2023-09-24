@@ -32,7 +32,6 @@ class ApiUserController extends Controller
         $request->validate([
             'name' =>'required|string|max:255',
             'email' =>'required|email|max:255|unique:users',          
-            // Agrega otras reglas de validación según tus necesidades
         ]);
 
       
@@ -49,11 +48,9 @@ class ApiUserController extends Controller
             return response()->json(['message' => 'No se encontró el usuario'], 404); 
         }
 
-        // Validar los datos de entrada (del formulario)
         $request->validate([
            'name' =>'string',
            'email' => 'email',
-            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
        
         $user->update($request->all());

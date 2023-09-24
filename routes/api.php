@@ -23,38 +23,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 //Route::middleware('auth:sanctum')->group(function () {
-    // Ruta para obtener información del usuario autenticado
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
     
-    //Agregar las rutas para los controladores API
     Route::prefix('v1')->group(function () {
 
-        // El grupo Route::resource ya incluye todas las rutas de forma automática(las del crud),
-            //Laravel automáticamente crea las rutas para las acciones CRUD (index, show, store, update, destroy) y las asocia a los métodos correspondientes en tu controlador ApiBookController.
-       
-        // Rutas para los usuarios (User)
     Route::resource('usersApi', ApiUserController::class);
 
-    // Rutas para los roles (Role)
     Route::resource('rolesApi', ApiRoleController::class);
 
-    // Rutas para las publicaciones (Post)
     Route::resource('postsApi', ApiPostController::class);
 
-    // Rutas para las categorías (Category)
     Route::resource('categoriesApi', ApiCategoryController::class);
 
-    // Rutas para la tabla pivot entre usuarios y libros (Book User)
     Route::resource('bookUsersApi', ApiBookUserController::class);
 
-    // Rutas para préstamos (Book Loan)
     Route::resource('bookLoansApi', ApiBookLoanController::class);
 
-    // Rutas para los libros (Books)
     Route::resource('booksApi', ApiBookController::class);
-
 
     //});
 });

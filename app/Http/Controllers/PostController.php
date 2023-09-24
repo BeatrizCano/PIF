@@ -13,7 +13,6 @@ class PostController extends Controller
         $this->authorizeResource(Post::class, 'post');
     }
 
-    //resto de metodos
     public function update(Request $request, Post $post)
     {
         //Tu lógica para actualizar la publicación
@@ -24,6 +23,5 @@ class PostController extends Controller
         //Tu lógica para borrar la publicación
     }
 
-    //resto de metodos
 
 }

@@ -32,7 +32,6 @@ class ApiBookUserController extends Controller
         $request->validate([
             'user_id' => 'required|integer',
             'book_id' => 'required|integer',
-            // Agrega otras reglas de validación según tus necesidades
         ]);
 
       
@@ -49,11 +48,9 @@ class ApiBookUserController extends Controller
             return response()->json(['message' => 'No se encontró el préstamo de libro'], 404); 
         }
 
-        // Validar los datos de entrada (del formulario)
         $request->validate([
             'user_id' => 'integer',
             'book_id' => 'integer',
-            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
        
         $bookUser->update($request->all());
