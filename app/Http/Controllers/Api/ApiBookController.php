@@ -29,27 +29,29 @@ class ApiBookController extends Controller
     //Método para crear un nuevo libro
     public function store(Request $request)
     {
-        //Validar los datos de entrada (del formulario)
-        $request->validate([
-            
-            'title' =>'required|string|max:255',
-            'author' =>'required|string|max:255',
-            'description' =>'required|string',
-            'language' =>'required|string|max:255',
-            'publisher' =>'required|string|max:255',
-            'year' =>'required|integer|min:1800|max:' . date('Y'),
-            'isbn' =>'required|string|max:255',
-            'image' =>'required|string',
-            'price' =>'required|number|min:0',
-            'stock' =>'required|integer|min:0',
-            'status' =>'required|string|max:255',
-    
-        ]);
-
-         //Crear un nuevo libro en la base de datos
-        $book =Book::create($request->all()); //Crear un nuevo libro desde la base de datos
-        return response()->json($book, 201); //Responder con el libro creado en formato JSON
-
+        $book = new Book;
+        $book->category_id = $request->category_id;           
+        $book->authors = $request->authors;
+        $book->description = $request->description;
+        $book->language = $request->language;
+        $book->publisher= $request->publisher;
+        $book->year= $request->year;
+        $book->publisher= $request->publisher;
+        $book->isbn= $request->isbn;
+        $book->image= $request->image;
+        $book->price= $request->price;
+        $book->stock= $request->stock;
+        $book->status= $request->status;
+        $book->title = $request->title;
+        
+        $book->save();
+        $data = [
+            'message' => 'book created successfully',
+            'book' => $book
+        ];
+        
+        return response()->json($data);
+        
     }
 
     //Método para actualizar los datos de un libro por su ID
