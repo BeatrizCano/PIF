@@ -55,32 +55,38 @@ class ApiBookController extends Controller
     }
 
     //Método para actualizar los datos de un libro por su ID
-   public function update(Request $request, $id)
+    public function update(Request $request, $id)
     {
+        $book = Book::find($id); // Buscar el libro por su ID
+    
+        if (!$book) {
+            return response()->json(['message' => 'No se encontró el libro'], 404);
+        }
+    
+        // Actualizar las propiedades del libro
+        $book->category_id = $request->category_id;           
+        $book->authors = $request->authors;
+        $book->description = $request->description;
+        $book->language = $request->language;
+        $book->publisher= $request->publisher;
+        $book->year= $request->year;
+        $book->isbn= $request->isbn;
+        $book->image= $request->image;
+        $book->price= $request->price;
+        $book->stock= $request->stock;
+        $book->status= $request->status;
+        $book->title = $request->title;
         
-            $book->category_id = $request->category_id;           
-            $book->authors = $request->authors;
-            $book->description = $request->description;
-            $book->language = $request->language;
-            $book->publisher= $request->publisher;
-            $book->year= $request->year;
-            $book->publisher= $request->publisher;
-            $book->isbn= $request->isbn;
-            $book->image= $request->image;
-            $book->price= $request->price;
-            $book->stock= $request->stock;
-            $book->status= $request->status;
-            $book->title = $request->title;
-            
-            $book->save();
-            $data = [
-                'message' => 'book update successfully',
-                'book' => $book
-            ];
-            
-            return response()->json($data);
+        $book->save();
+    
+        $data = [
+            'message' => 'book updated successfully',
+            'book' => $book
+        ];
+        
+        return response()->json($data);
     }
-
+    
     //Método para eliminar un libro por su ID
     public function destroy($id)
     {
