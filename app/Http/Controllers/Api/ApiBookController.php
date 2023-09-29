@@ -51,30 +51,34 @@ class ApiBookController extends Controller
         ];
         
         return response()->json($data);
-        
+
     }
 
     //Método para actualizar los datos de un libro por su ID
-    public function update(Request $request, $id)
+   public function update(Request $request, $id)
     {
-         //Buscar un libro por su ID 
-         $book = Book::find($id);
-         if (!$book) {
-             return response()->json(['message' => 'No se encontró el libro'], 404);//si no se encuentra el libro responder con un error 404
-         }
-
-         //Validar los datos de entrada (del formulario)
-         $request->validate([
+        
+            $book->category_id = $request->category_id;           
+            $book->authors = $request->authors;
+            $book->description = $request->description;
+            $book->language = $request->language;
+            $book->publisher= $request->publisher;
+            $book->year= $request->year;
+            $book->publisher= $request->publisher;
+            $book->isbn= $request->isbn;
+            $book->image= $request->image;
+            $book->price= $request->price;
+            $book->stock= $request->stock;
+            $book->status= $request->status;
+            $book->title = $request->title;
             
-            'title' =>'string', //puede ser opcional
-            'author' =>'string',
-            //Otras reglas de validación según tus necesidades para campos adicionales
-
-         ]);
-
-         //Actualizar los datos del libro en la base de datos
-         $book->update($request->all());
-         return response()->json($book, 200); //Responder con los nuevos datos del libro en formato JSON
+            $book->save();
+            $data = [
+                'message' => 'book update successfully',
+                'book' => $book
+            ];
+            
+            return response()->json($data);
     }
 
     //Método para eliminar un libro por su ID
