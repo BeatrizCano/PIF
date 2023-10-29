@@ -16,7 +16,7 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">Transmite tu conocimiento</span>
+                <span class="site-heading-upper text-yellow mb-3">Transmite tu conocimiento</span>
                 <span class="site-heading-lower">Banco de Libros Fénix</span>
             </h1>
         </header>
@@ -56,7 +56,7 @@
                             <span class="section-heading-lower">¡Colabora!</span>
                         </h2>
                         <p class="mb-3">Somos una organización sin ánmio de lucro enfocada a recoger, catalogar y redistribuir libros de segunda mano entre quién más lo necesita. Aceptamos donaciones de empresas, editoriales, asociaciones o particulares.</p>
-                        <div class="intro-button mx-auto"><a class="btn btn-primary btn-xl" href="#!">¡Sigue leyendo!</a></div>
+                        <div class="intro-button mx-auto"><a class="btn btn-yellow btn-xl" href="#!">¡Sigue leyendo!</a></div>
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer text-faded text-center py-5">
+        <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->

@@ -16,7 +16,7 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">Colabora donando, disfruta leyendo</span>
+                <span class="site-heading-upper text-yellow mb-3">Colabora donando, disfruta leyendo</span>
                 <span class="site-heading-lower">Banco de Libros Fénix</span>
             </h1>
         </header>
@@ -100,7 +100,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer text-faded text-center py-5">
+        <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
