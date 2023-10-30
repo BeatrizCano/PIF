@@ -77,7 +77,9 @@
                     </div>
                     <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-02.jpg" alt="..." />
                     <div class="product-item-description d-flex ms-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Nuestro equipo trabaja duro cada día para conseguir nuevos puntos de entrega y de recogida de libros, comunicándose con pymes, centros públicos y privados para facilitar el proceso al usuario final, vosotr@s.</p></div>
+                        <div class="bg-faded p-5 rounded">
+                            <p class="mb-0">Nuestro equipo trabaja duro cada día para conseguir nuevos puntos de entrega y de recogida de libros, comunicándose con pymes, centros públicos y privados para facilitar el proceso al usuario final, vosotr@s.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,7 +97,12 @@
                     </div>
                     <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="assets/img/products-03.jpg" alt="..." />
                     <div class="product-item-description d-flex me-auto">
-                        <div class="bg-faded p-5 rounded"><p class="mb-0">Te preguntarás, ¿Qué hacen con los libros que reciben? Primero, ¡Agradecer tu donación, por supuesto! Después, los libros llegan a nuestra central en Madrid donde son revisados y catalogados. Se guardan en nuestra biblioteca y son entregados a las personas que lo soliciten en forma de préstamo temporal. Sobre todo colaboramos con centros sociales, colegios, asociaciones sin ánimo de lucro, o asociaciones de vecinos que quieran incorporar una pequeña biblioteca en sus bloques. En definitiva, con todo aquel que quiera dar un buen uso a los libros que se le prestan.</p></div>
+                        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                            <p class="mb-4">Te preguntarás, ¿Qué hacen con los libros que reciben? Primero, ¡Agradecer tu donación, por supuesto! Después, los libros llegan a nuestra central en Madrid donde son revisados y catalogados. Se guardan en nuestra biblioteca y son entregados a las personas que lo soliciten en forma de préstamo temporal. Sobre todo colaboramos con centros sociales, colegios, asociaciones sin ánimo de lucro, o asociaciones de vecinos que quieran incorporar una pequeña biblioteca en sus bloques. En definitiva, con todo aquel que quiera dar un buen uso a los libros que se le prestan.</p>
+                            <div id="scrollToTop" class="intro-button mx-auto" style="display: none;">
+                                <a class="btn btn-primary btn-xl" href="#!">¡Volver arriba!</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

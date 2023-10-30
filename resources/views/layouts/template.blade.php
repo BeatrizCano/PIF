@@ -56,7 +56,7 @@
                             <span class="section-heading-lower">¡Colabora!</span>
                         </h2>
                         <p class="mb-3">Somos una organización sin ánmio de lucro enfocada a recoger, catalogar y redistribuir libros de segunda mano entre quién más lo necesita. Aceptamos donaciones de empresas, editoriales, asociaciones o particulares.</p>
-                        <div class="intro-button mx-auto"><a class="btn btn-yellow btn-xl" href="#!">¡Sigue leyendo!</a></div>
+                        <div class="intro-button mx-auto"><a class="btn btn-yellow btn-xl" href="{{ route('contact') }}">¿Nos ayudas?</a></div>
                     </div>
                 </div>
             </div>
@@ -70,11 +70,14 @@
                                 <span class="section-heading-upper">Nuestro compromiso</span>
                                 <span class="section-heading-lower">Para ti</span>
                             </h2>
-                            <p class="mb-0">El Banco de Libros Fénix se ha creado con el objetivo de llevar la cultura a todos los rincones del mundo de manera gratuita. Nuestros equipo colabora de manera desinteresada en esta labor para que este ciclo nunca se detenga. Aprovechamos los recursos que ya existen para cumplir con nuestra misión. ¡Únete a nosotr@s!</p>
-                        </div>
+                            <p class="mb-4">El Banco de Libros Fénix se ha creado con el objetivo de llevar la cultura a todos los rincones del mundo de manera gratuita. Nuestros equipo colabora de manera desinteresada en esta labor para que este ciclo nunca se detenga. Aprovechamos los recursos que ya existen para cumplir con nuestra misión. ¡Únete a nosotr@s!</p>
+                            <div id="scrollToTop" class="intro-button mx-auto" style="display: none;">
+                                <a class="btn btn-primary btn-xl" href="#!">¡Volver arriba!</a>
+                            </div>
+                        </div>                        
                     </div>
                 </div>
-            </div>
+            </div>           
         </section>
         <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>

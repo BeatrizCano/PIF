@@ -11067,3 +11067,12 @@ p {
   margin-bottom: 3px;
   /* Otros estilos personalizados si es necesario */
 }
+
+.image-header {
+  margin-bottom: 10px; 
+  display: block; 
+}
+
+.book-image {
+   max-height: 200px;
+}
