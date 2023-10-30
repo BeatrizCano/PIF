@@ -44,7 +44,7 @@
 										<th>Editorial</th>
 										<th>Año</th>
 										<th>Isbn</th>
-										<th>Imágen</th>
+										<!-- <th>Imágen</th> -->
 										<th>Precio</th>
 										<th>Stock</th>
 										<th>Estado</th>										
@@ -68,7 +68,7 @@
 											<td>{{ $book->publisher }}</td>
 											<td>{{ $book->year }}</td>
 											<td>{{ $book->isbn }}</td>
-											<td>{{ $book->image }}</td>
+											<!-- <td>{{ $book->image }}</td> -->
 											<td>{{ $book->price }}</td>
 											<td>{{ $book->stock }}</td>
 											<td>{{ $book->status }}</td>											

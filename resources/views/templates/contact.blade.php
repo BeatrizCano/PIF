@@ -104,13 +104,15 @@
                                     </div>
                                     <br>
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary mb-4">Submit</button>
                                     </div> 
-                                    <br>                                  
                                 </form>
-                                <div id="mesagge" style="display:none;">
+                                <div id="mesagge" class="mb-4" style="display:none;">
                                     ¡El formulario se ha enviado correctamente! ¡Gracias por contactar con nosotr@s! Nos pondremos en contacto con usted en menos de 24 horas.
                                 </div>
+                                <div>
+                                    <a href="#top" class="text-faded-footer">Volver arriba</a>
+                                </div>        
                             </div>
                             <!--Escucha el evento de envío del formulario (submit). Cuando el formulario se envía, evita el comportamiento predeterminado (recargar la página) usando event.preventDefault(). Luego, muestra el elemento con el id mensaje configurando su estilo display a block, lo que lo hará visible.-->
                             <script>
