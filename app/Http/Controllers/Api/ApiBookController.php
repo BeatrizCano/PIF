@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Book;//Importar el modelo
 
+
 class ApiBookController extends Controller
 {
     //Método para obtener una lista de libros
@@ -46,41 +47,39 @@ class ApiBookController extends Controller
         
         $book->save();
         $data = [
-            'message' => 'book created successfully',
+            'message' => 'libro creado exitosamente',
             'book' => $book
         ];
         
-        return response()->json($data);
+        return response()->json($data, 201);
 
     }
 
     //Método para actualizar los datos de un libro por su ID
     public function update(Request $request, $id)
     {
-        $book = Book::find($id); // Buscar el libro por su ID
-    
+        $book = Book::find($id); // Buscar el libro por su ID    
         if (!$book) {
             return response()->json(['message' => 'No se encontró el libro'], 404);
         }
-    
-        // Actualizar las propiedades del libro
-        $book->category_id = $request->category_id;           
-        $book->authors = $request->authors;
-        $book->description = $request->description;
-        $book->language = $request->language;
-        $book->publisher= $request->publisher;
-        $book->year= $request->year;
-        $book->isbn= $request->isbn;
-        $book->image= $request->image;
-        $book->price= $request->price;
-        $book->stock= $request->stock;
-        $book->status= $request->status;
-        $book->title = $request->title;
-        
-        $book->save();
+
+        $book->update([
+            'category_id' => $request->category_id,
+            'authors' => $request->authors,
+            'description' => $request->description,
+            'language' => $request->language,
+            'publisher' => $request->publisher,
+            'year' => $request->year,
+            'isbn' => $request->isbn,
+            'image' => $request->image,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'status' => $request->status,
+            'title' => $request->title,
+        ]);
     
         $data = [
-            'message' => 'book updated successfully',
+            'message' => 'Libro actualizado exitosamente',
             'book' => $book
         ];
         
@@ -98,7 +97,11 @@ class ApiBookController extends Controller
 
         //Eliminar el libro en la base de datos
         $book->delete();
-        return response()->json(['message' => 'Libro eliminado'], 204); //Responder con un código de estado 204 (borrado)
+        $data = [
+            'message' => 'Libro eliminado exitosamente',
+            'book' => $book
+        ];
+        return response()->json($data, 200);
     }
        
 }

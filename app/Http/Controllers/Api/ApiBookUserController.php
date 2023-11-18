@@ -23,21 +23,28 @@ class ApiBookUserController extends Controller
             return response()->json(['message' => 'No se encontró el préstamo de libro'], 404); 
         }
         return response()->json($bookUser, 200); 
-    }
+    }  
 
-    
+        
     public function store(Request $request)
     {
         
         $request->validate([
             'user_id' => 'required|integer',
             'book_id' => 'required|integer',
-            // Agrega otras reglas de validación según tus necesidades
         ]);
 
+        $bookUser = new BookUser;
+        $bookUser->user_id=$request->user_id;
+        $bookUser->book_id=$request->book_id;        
+        $bookUser->save();
+
+        $data = [
+            'message' => 'Préstamo creado exitosamente',
+            'book_user' => $bookUser
+        ];
       
-        $bookUser = BookUser::create($request->all());
-        return response()->json($bookUser, 201); 
+        return response()->json($data, 201); 
     }
 
    
@@ -53,11 +60,20 @@ class ApiBookUserController extends Controller
         $request->validate([
             'user_id' => 'integer',
             'book_id' => 'integer',
-            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
-       
-        $bookUser->update($request->all());
-        return response()->json($bookUser, 200); 
+
+        $bookUser->update([
+            'user_id' => $request->user_id,
+            'book_id' => $request->book_id,
+        ]);
+    
+        $data = [
+            'message' => 'Préstamo actualizado exitosamente',
+            'book_user' => $bookUser
+        ];
+    
+        return response()->json($data, 200);
+
     }
 
    
@@ -70,6 +86,11 @@ class ApiBookUserController extends Controller
         }
 
         $bookUser->delete();
-        return response()->json(['message' => 'Préstamo de libro eliminado'], 204);
+        $data = [
+            'message' => 'Préstamo eliminado exitosamente',
+            'book_user' => $bookUser
+        ];
+        return response()->json($data, 200);
+        
     }
 }
