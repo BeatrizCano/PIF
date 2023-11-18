@@ -46,13 +46,13 @@
 <h2>Ejemplos de Uso</h2>
 
 <h3>Obtener la lista de libros</h3>
-<p>GET /api/v1/booksApi</p>
+<p>GET /api/booksApi</p>
 
 <h3>Obtener detalles de un libro</h3>
-<p>GET /api/v1/booksApi/{id}</p>
+<p>GET /api/booksApi/{id}</p>
 
 <h3>Crear un nuevo préstamo</h3>
-<p>POST /api/v1/bookLoansApi</p>
+<p>POST /api/bookLoansApi</p>
 
 <h4>Cuerpo de la Solicitud</h4>
 <p>
