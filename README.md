@@ -29,11 +29,13 @@
     <li>Clona el repositorio a tu máquina local.</li>
     <li>Configura el archivo `.env` con la información de tu base de datos y correo electrónico.</li>
     <li> Ejecuta `composer install` para instalar las dependencias de Laravel.</li>
+    <li> Ejecuta `npm install` para instalar las dependencias de Vite.</li>
     <li> Ejecuta `php artisan key:generate` para generar una nueva clave de aplicación.</li>
     <li>Ejecuta `php artisan migrate` para crear las tablas en la base de datos.</li>
     <li>Ejecuta `php artisan db:seed` para llenar la base de datos con datos de prueba (opcional).</li>
     <li>Ejecuta `php artisan vendor:publish --provider="Ibex\CrudGenerator\CrudGeneratorServiceProvider"` para publicar las vistas y recursos del generador de CRUD.</li>
     <li>Ejecuta `php artisan crud:generate` para generar CRUDs para tus modelos existentes.</li>
+    <li>Ejecuta los comandos `php artisan serve` y `npm run dev `</li>
     <li>Inicia el servidor local usando XAMPP.</li>
 </ol>
 
