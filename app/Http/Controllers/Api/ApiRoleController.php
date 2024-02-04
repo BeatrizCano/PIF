@@ -30,6 +30,7 @@ class ApiRoleController extends Controller
         
         $request->validate([
             'name' =>'required|string|max:255',
+            // Agrega otras reglas de validación según tus necesidades
         ]);
 
         $role = new Role;
@@ -53,8 +54,10 @@ class ApiRoleController extends Controller
             return response()->json(['message' => 'No se encontró el rol'], 404); 
         }
 
+        // Validar los datos de entrada (del formulario)
         $request->validate([
            'name' =>'string',
+            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
        
         $role->update([
