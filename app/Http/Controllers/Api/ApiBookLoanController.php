@@ -8,93 +8,61 @@ use App\Models\Bookloan;
 
 class ApiBookLoanController extends Controller
 {
-    //Método para obtener una lista de préstamos de libros
     public function index()
     {
-        $bookLoans = BookLoan::all(); //Obtener todos los préstamos de libros desde la base de datos
-        return response()->json($bookLoans, 200); //Responder con los préstamos de libros en formato JSON
+        $bookLoans = BookLoan::all();
+        return response()->json($bookLoans, 200); 
     }
 
-    //Método para mostrar detalle de un préstamo de libro por su ID
     public function show($id)
     {
-        $bookLoan = BookLoan::find($id); //Buscar un préstamo de libro por su ID
+        $bookLoan = BookLoan::find($id); 
         if (!$bookLoan) {
-            return response()->json(['message' => 'No se encontró el préstamo del libro'], 404);//si no se encuentra el libro responder con un error 404
+            return response()->json(['message' => 'No se encontró el préstamo del libro'], 404);
         }
-        return response()->json($bookLoan, 200); //Responder con los detalles del préstamo del libro en formato JSON
+        return response()->json($bookLoan, 200); 
     }
 
-    //Método para crear un nuevo préstamos de libro
     public function store(Request $request)
     {
-        //Validar los datos de entrada (del formulario)
-        $request->validate([            
+        $request->validate([
+            
             'loan_date' => 'required|date',
             'return_date' => 'required|date|after:loan_date',
-             // Agrega otras reglas de validación según tus necesidades
         ]);
 
-        $bookLoan = new BookLoan;
-        $bookLoan->book_user_id=$request->book_user_id;
-        $bookLoan->loan_date=$request->loan_date;
-        $bookLoan->return_date=$request->return_date;
-        $bookLoan->save();
-
-        $data = [
-            'message' => 'Préstamo creado exitosamente',
-            'book_loans' => $bookLoan
-        ];
-        
-        return response()->json($bookLoan, 201); //Responder con el préstamo de libro creado en formato JSON y un código de estado 201 (creado)
+        $bookLoan =BookLoan::create($request->all());
+        return response()->json($bookLoan, 201); 
 
     }
 
-    //Método para actualizar los datos de un préstamo de un libro por su ID
     public function update(Request $request, $id)
-{ 
-    
-    $bookLoan = BookLoan::find($id);
-    if (!$bookLoan) {
-        return response()->json(['message' => 'No se encontró el préstamo'], 404);
-    }
-
-    $request->validate([            
-        'loan_date' => 'required|date',
-        'return_date' => 'required|date|after:loan_date',
-    ]);
-
-    $bookLoan->update([
-        'book_user_id' => $request->book_user_id,
-        'loan_date' => $request->loan_date,
-        'return_date' => $request->return_date,
-    ]);
-
-    $data = [
-        'message' => 'Préstamo actualizado exitosamente',
-        'book_loans' => $bookLoan
-    ];
-
-    return response()->json($data, 200);
-}
-
-  
-    public function destroy(BookLoan $bookLoan, $id)
     {
-
-         //Buscar un libro por su ID 
          $bookLoan = BookLoan::find($id);
          if (!$bookLoan) {
-             return response()->json(['message' => 'No se encontró el préstamo'], 404);//si no se encuentra el libro responder con un error 404
+             return response()->json(['message' => 'No se encontró el préstamo del libro'], 404);
          }
-         
+
+         $request->validate([
+            
+            'loan_date' => 'date', 
+            'return_date' => 'date',
+
+         ]);
+
+         $bookLoan->update($request->all());
+         return response()->json($bookLoan, 200); 
+    }
+
+    public function destroy($id)
+    {
+        $bookLoan = BookLoan::find($id);
+        if (!$bookLoan) {
+            return response()->json(['message' => 'No se encontró el préstamo del libro'], 404);
+        }
+
         $bookLoan->delete();
-        $data = [
-            'message' => 'Préstamo eliminado exitosamente',
-            'book_loans' => $bookLoan
-        ];
-        return response()->json($data, 200);
-       
+        return response()->json(['message' => 'Préstamo de libro eliminado'], 204); 
     }
        
 }

@@ -56,7 +56,6 @@ class ApiBookUserController extends Controller
             return response()->json(['message' => 'No se encontró el préstamo de libro'], 404); 
         }
 
-        // Validar los datos de entrada (del formulario)
         $request->validate([
             'user_id' => 'integer',
             'book_id' => 'integer',

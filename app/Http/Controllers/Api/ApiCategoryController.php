@@ -27,42 +27,31 @@ class ApiCategoryController extends Controller
     
     public function store(Request $request)
     {
+        
         $request->validate([
-            'name' => 'required|string|max:255',
-            // Agrega otras reglas de validación según tus necesidades
+            'name' => 'required|string|max:255',           
         ]);
 
+      
         $category = Category::create($request->all());
-
-        $data = [
-            'message' => 'Categoría creada con éxito',
-            'category' => $category,
-        ];
-
-        return response()->json($data, 201);
+        return response()->json($category, 201); 
     }
-    
+
    
     public function update(Request $request, $id)
     {
+       
         $category = Category::find($id);
-
         if (!$category) {
-            return response()->json(['message' => 'No se encontró la categoría'], 404);
+            return response()->json(['message' => 'No se encontró la categoría'], 404); 
         }
 
         $request->validate([
-            'name' => 'string'
+            'name' => 'string',
         ]);
-
+       
         $category->update($request->all());
-
-        $data = [
-            'message' => 'Categoría actualizada con éxito',
-            'category' => $category,
-        ];
-
-        return response()->json($data, 200);
+        return response()->json($category, 200); 
     }
 
    
@@ -75,11 +64,7 @@ class ApiCategoryController extends Controller
         }
 
         $category->delete();
-        $data = [
-            'message' => 'Libro eliminado exitosamente',
-            'category' => $category
-        ];
-        return response()->json($data, 200);
+        return response()->json(['message' => 'Categoría eliminada'], 204);
     }
 }
 

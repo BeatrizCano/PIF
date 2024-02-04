@@ -22,10 +22,10 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ($user->isAdmin()) {
-            return redirect('/home'); // Redirigir al panel de administración
+            return redirect('/home'); 
         }
 
-        return redirect('/welcome'); // Resto de los usuarios
+        return redirect('/welcome'); 
     }
 
     public function logout(Request $request)

@@ -53,5 +53,4 @@ class User extends Authenticatable
         return $this->hasMany(BookUser::class);
     }
 
-    // Otros métodos públicos del modelo...
 }

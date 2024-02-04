@@ -23,12 +23,12 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    return view('welcome'); // O la vista que desees mostrar
+    return view('welcome'); 
 });
 
 Auth::routes();
 
-Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');//sino funciona probar a quitar middleware
+Route::resource('books', App\Http\Controllers\BookController::class)->middleware('auth');
 Route::resource('categories', App\Http\Controllers\CategoryController::class)->middleware('auth');
 Route::resource('book-loans', App\Http\Controllers\BookLoanController::class)->middleware('auth');
 Route::resource('book-users', App\Http\Controllers\BookUserController::class)->middleware('auth');
@@ -38,12 +38,10 @@ Route::resource('book-loans', App\Http\Controllers\BookLoanController::class)->m
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//Restringir el acceso a la ruta "/admin"
 Route::get('/admin', function () {
     return 'Bienvenido al panel de administración';
 })->middleware('auth.admin:admin');
 
-//Rutas para gestionar las publicaciones (posts)
 Route::middleware(['auth'])->group(function () {
     Route::resource('posts', PostController::class);
 });

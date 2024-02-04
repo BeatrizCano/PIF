@@ -70,7 +70,6 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.admin' => \App\Http\Middleware\CheckRole::class,
-        // ... otros middleware ...
     ];
     
 }

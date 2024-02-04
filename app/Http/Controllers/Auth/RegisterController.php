@@ -71,7 +71,7 @@ class RegisterController extends Controller
         ]);
 
         if (request('admin')) {
-            $user->assignRole('admin'); // Asigna el rol de administrador
+            $user->assignRole('admin'); 
         }
 
         return $user;

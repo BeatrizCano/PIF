@@ -9,14 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
-    //campos protegidos o fillable
     protected $fillable = [
         'title',
         'content',
-        'user_id' //añade aquí tus campos
+        'user_id',
     ];
 
-    //relación con el usuario (autor del post)
     public function user()
     {
         return $this->belongsTo(User::class);

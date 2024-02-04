@@ -27,13 +27,13 @@ class HomeController extends Controller
 {
     if (auth()->check()) {
         if (auth()->user()->isAdmin()) {
-            return view('home'); // Vista para administradores
+            return view('home'); 
         } else {
-            return view('welcome'); // Vista para usuarios normales
+            return view('welcome'); 
         }
     }
 
-    return view('auth.login'); // Si no está autenticado, redirige al login
+    return view('auth.login'); 
 }
 
 }
