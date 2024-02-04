@@ -25,8 +25,8 @@
         </div>
         <br>
         <div class="form-group">
-            {{ Form::label('estado') }}
-            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $status, ['class' => 'form-control' . ($errors->has('status') ? ' is-invalid' : ''), 'placeholder' => 'Selecciona un estado']) }}
+            {{ Form::label('status', 'Estado del Libro') }}
+            {{ Form::select('status', ['Disponible' => 'Disponible', 'No Disponible' => 'No Disponible'], $bookUser->book->status, ['class' => 'form-control' . ($errors->has('status') ? '                         is-invalid' : ''), 'placeholder' => 'Selecciona un estado']) }}
             {!! $errors->first('status', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
