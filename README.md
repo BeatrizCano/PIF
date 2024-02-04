@@ -31,7 +31,7 @@
     <li> Ejecuta `composer install` para instalar las dependencias de Laravel.</li>
     <li> Ejecuta `npm install` para instalar las dependencias de Vite.</li>
     <li> Ejecuta `php artisan key:generate` para generar una nueva clave de aplicación.</li>
-    <li>Ejecuta `php artisan migrate` para crear las tablas en la base de datos.</li>
+    <li>Ejecuta `php artisan migrate` para crear las tablas en la base de datos.(Dale a "Yes" para que te cree BBDD de forma automática)</li>
     <li>Ejecuta `php artisan db:seed` para llenar la base de datos con datos de prueba (opcional).</li>
     <li>Ejecuta `php artisan vendor:publish --provider="Ibex\CrudGenerator\CrudGeneratorServiceProvider"` para publicar las vistas y recursos del generador de CRUD.</li>
     <li>Ejecuta `php artisan crud:generate` para generar CRUDs para tus modelos existentes.</li>
@@ -42,6 +42,7 @@
 <h2>Uso</h2>
 
 <ul>
+    <li>Para abrir el proyecto lanza "php artisan serve" y "npm run dev" en la consola.</li>
     <li>Accede a la vista principal del usuario y navega por las funcionalidades.</li>
     <li>Si eres administrador, inicia sesión y accede a tu área personalizada.</li>
     <li>Utiliza los CRUDs para gestionar libros, categorías y préstamos.</li>

@@ -32,9 +32,16 @@ class ApiRoleController extends Controller
             'name' =>'required|string|max:255',
         ]);
 
-      
-        $role = Role::create($request->all());
-        return response()->json(['message' => 'Rol creado con éxito', 'role' => $role], 201);
+        $role = new Role;
+        $role->name = $request->name;
+        $role->save();
+
+        $data = [
+            'message' => 'Rol creado con éxito',
+            'roles' => $role
+        ];
+        return response()->json($data, 201);
+
     }
 
    
@@ -50,8 +57,16 @@ class ApiRoleController extends Controller
            'name' =>'string',
         ]);
        
-        $role->update($request->all());
-        return response()->json($role, 200); 
+        $role->update([
+            'name' => $request->name,
+        ]);
+    
+        $data = [
+            'message' => 'Rol modificado exitosamente',
+            'roles' => $role
+        ];
+        
+        return response()->json($data, 200);
     }
 
    
@@ -64,7 +79,12 @@ class ApiRoleController extends Controller
         }
 
         $role->delete();
-        return response()->json(['message' => 'Rol eliminado'], 204);
+        $data = [
+            'message' => 'Rol eliminado exitosamente',
+            'roles' => $role
+        ];
+        return response()->json($data, 200);      
+       
     }
 }
 

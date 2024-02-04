@@ -16,7 +16,7 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">¿Quieres conocernos un poco más?</span>
+                <span class="site-heading-upper text-yellow mb-3">¿Quieres conocernos un poco más?</span>
                 <span class="site-heading-lower">Banco de Libros Fénix</span>
             </h1>
         </header>
@@ -52,24 +52,27 @@
                 <div class="about-heading-content">
                     <div class="row">
                         <div class="col-xl-9 col-lg-10 mx-auto">
-                            <div class="bg-faded rounded p-5">
+                            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
                                 <h2 class="section-heading mb-4">
                                     <span class="section-heading-upper">Libros de texto, novelas, comics...</span>
                                     <span class="section-heading-lower">Aceptamos toda clase de literatura</span>
                                 </h2>
                                 <p>Comenzamos nuestra labor  de recuperar libros de segunda mano para darles una segunda vida en 2023. Somos una empresa joven, con grandes expectativas y centrada en distribuir el conocimiento a coste cero.</p>
-                                <p class="mb-0">
+                                <p class="mb-4">
                                     Colaboramos con centros públicos y empresas privadas
                                     <em>para</em>
                                     descentralizar nuestro servicio de recogida y entrega de libros. Sabemos que en cada momento de la vida necesitamos diferentes tipos de historias y por eso aceptamos desde libros de texto, hasta comics, pasando por novelas, cuentos infantiles...
                                 </p>
+                                <div id="scrollToTop" class="intro-button mx-auto" style="display: none;">
+                                    <a class="btn btn-primary btn-xl" href="#!">¡Volver arriba!</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <footer class="footer text-faded text-center py-5">
+        <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->

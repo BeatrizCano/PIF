@@ -16,7 +16,7 @@
     <body>
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
-                <span class="site-heading-upper text-primary mb-3">Contacta con nosotr@s</span>
+                <span class="site-heading-upper text-yellow mb-3">Contacta con nosotr@s</span>
                 <span class="site-heading-lower">Banco de Libros Fénix</span>
             </h1>
         </header>
@@ -104,13 +104,15 @@
                                     </div>
                                     <br>
                                     <div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-primary mb-4">Submit</button>
                                     </div> 
-                                    <br>                                  
                                 </form>
-                                <div id="mesagge" style="display:none;">
+                                <div id="mesagge" class="mb-4" style="display:none;">
                                     ¡El formulario se ha enviado correctamente! ¡Gracias por contactar con nosotr@s! Nos pondremos en contacto con usted en menos de 24 horas.
                                 </div>
+                                <div>
+                                    <a href="#top" class="text-faded-footer">Volver arriba</a>
+                                </div>        
                             </div>
                             <!--Escucha el evento de envío del formulario (submit). Cuando el formulario se envía, evita el comportamiento predeterminado (recargar la página) usando event.preventDefault(). Luego, muestra el elemento con el id mensaje configurando su estilo display a block, lo que lo hará visible.-->
                             <script>
@@ -124,7 +126,7 @@
                 </div>
             </div>
         </section>
-        <footer class="footer text-faded text-center py-5">
+        <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->

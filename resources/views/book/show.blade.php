@@ -20,11 +20,14 @@
                         <br>
                     </div>
 
-                    <div class="card-body">
-                        
+                    <div class="card-body">                       
                         <div class="form-group">
                             <strong>Categoría Id:</strong>
                             {{ $book->category_id }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Título:</strong>
+                            {{ $book->title }}
                         </div>
                         <div class="form-group">
                             <strong>Autor@s:</strong>
@@ -51,10 +54,6 @@
                             {{ $book->isbn }}
                         </div>
                         <div class="form-group">
-                            <strong>Imágen:</strong>
-                            {{ $book->image }}
-                        </div>
-                        <div class="form-group">
                             <strong>Precio:</strong>
                             {{ $book->price }}
                         </div>
@@ -66,9 +65,9 @@
                             <strong>Estado:</strong>
                             {{ $book->status }}
                         </div>
-                        <div class="form-group">
-                            <strong>Título:</strong>
-                            {{ $book->title }}
+                        <div class="form-group text-center">
+                            <strong class="image-header">Imágen:</strong>
+                            <img src="{{ $book->image }}" alt="Imagen del Libro" class="book-image">
                         </div>
                     </div>
                 </div>
