@@ -29,6 +29,7 @@ class ApiPostController extends Controller
     {
         
         $request->validate([
+              //No tiene columnas aún     
             // Agrega otras reglas de validación según tus necesidades
         ]);
 
@@ -46,8 +47,10 @@ class ApiPostController extends Controller
             return response()->json(['message' => 'No se encontró el post'], 404); 
         }
 
-        $request->validate([           
-            // Añade reglas de validación según tus necesidades para campos adicionales
+        // Validar los datos de entrada (del formulario)
+        $request->validate([
+           
+            // Otras reglas de validación según tus necesidades para campos adicionales
         ]);
        
         $post->update($request->all());
