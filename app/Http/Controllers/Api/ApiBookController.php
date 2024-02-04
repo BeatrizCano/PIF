@@ -5,75 +5,103 @@ namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Book;
+use App\Models\Book;//Importar el modelo
+
 
 class ApiBookController extends Controller
 {
-        public function index()
+    //Método para obtener una lista de libros
+    public function index()
     {
-        $books = Book::all(); 
-        return response()->json($books, 200); 
+        $books = Book::all(); //Obtener todos los libros desde la base de datos
+        return response()->json($books, 200); //Responder con los libros en formato JSON
     }
 
-        public function show($id)
+    //Método para mostrar detalle de un libro por su ID
+    public function show($id)
     {
-        $book = Book::find($id); 
+        $book = Book::find($id); //Buscar un libro por su ID
         if (!$book) {
-            return response()->json(['message' => 'No se encontró el libro'], 404);
+            return response()->json(['message' => 'No se encontró el libro'], 404);//si no se encuentra el libro responder con un error 404
         }
-        return response()->json($book, 200); 
+        return response()->json($book, 200); //Responder con los detalles del libro en formato JSON
     }
 
+    //Método para crear un nuevo libro
     public function store(Request $request)
     {
-        $request->validate([
-            
-            'title' =>'required|string|max:255',
-            'author' =>'required|string|max:255',
-            'description' =>'required|string',
-            'language' =>'required|string|max:255',
-            'publisher' =>'required|string|max:255',
-            'year' =>'required|integer|min:1800|max:' . date('Y'),
-            'isbn' =>'required|string|max:255',
-            'image' =>'required|string',
-            'price' =>'required|number|min:0',
-            'stock' =>'required|integer|min:0',
-            'status' =>'required|string|max:255',
-    
-        ]);
-
-        $book =Book::create($request->all()); 
-        return response()->json($book, 201); 
+        $book = new Book;
+        $book->category_id = $request->category_id;           
+        $book->authors = $request->authors;
+        $book->description = $request->description;
+        $book->language = $request->language;
+        $book->publisher= $request->publisher;
+        $book->year= $request->year;
+        $book->publisher= $request->publisher;
+        $book->isbn= $request->isbn;
+        $book->image= $request->image;
+        $book->price= $request->price;
+        $book->stock= $request->stock;
+        $book->status= $request->status;
+        $book->title = $request->title;
+        
+        $book->save();
+        $data = [
+            'message' => 'libro creado exitosamente',
+            'book' => $book
+        ];
+        
+        return response()->json($data, 201);
 
     }
 
+    //Método para actualizar los datos de un libro por su ID
     public function update(Request $request, $id)
     {
-         $book = Book::find($id);
-         if (!$book) {
-             return response()->json(['message' => 'No se encontró el libro'], 404);
-         }
-
-         $request->validate([
-            
-            'title' =>'string', 
-            'author' =>'string',
-
-         ]);
-
-         $book->update($request->all());
-         return response()->json($book, 200); 
-    }
-
-    public function destroy($id)
-    {
-        $book = Book::find($id);
+        $book = Book::find($id); // Buscar el libro por su ID    
         if (!$book) {
             return response()->json(['message' => 'No se encontró el libro'], 404);
         }
 
+        $book->update([
+            'category_id' => $request->category_id,
+            'authors' => $request->authors,
+            'description' => $request->description,
+            'language' => $request->language,
+            'publisher' => $request->publisher,
+            'year' => $request->year,
+            'isbn' => $request->isbn,
+            'image' => $request->image,
+            'price' => $request->price,
+            'stock' => $request->stock,
+            'status' => $request->status,
+            'title' => $request->title,
+        ]);
+    
+        $data = [
+            'message' => 'Libro actualizado exitosamente',
+            'book' => $book
+        ];
+        
+        return response()->json($data);
+    }
+    
+    //Método para eliminar un libro por su ID
+    public function destroy($id)
+    {
+        //Buscar un libro por su ID 
+        $book = Book::find($id);
+        if (!$book) {
+            return response()->json(['message' => 'No se encontró el libro'], 404);//si no se encuentra el libro responder con un error 404
+        }
+
+        //Eliminar el libro en la base de datos
         $book->delete();
-        return response()->json(['message' => 'Libro eliminado'], 204); 
+        $data = [
+            'message' => 'Libro eliminado exitosamente',
+            'book' => $book
+        ];
+        return response()->json($data, 200);
     }
        
 }
