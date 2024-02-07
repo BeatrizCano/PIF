@@ -41,7 +41,7 @@
                         </form>
                         </li>
                     @endguest
-                    
+
                     </ul>
                 </div>
             </div>
@@ -49,7 +49,7 @@
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
-                    <div class="product-item-title d-flex">
+                    <div class="product-item-title d-flex mb-3">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
                                 <span class="section-heading-upper">¿Quieres colaborar con una buena causa?</span>
@@ -67,7 +67,7 @@
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
-                    <div class="product-item-title d-flex">
+                    <div class="product-item-title d-flex mb-3">
                         <div class="bg-faded p-5 d-flex me-auto rounded">
                             <h2 class="section-heading mb-0">
                                 <span class="section-heading-upper">Centros sociales, empresas privadas</span>
@@ -87,7 +87,7 @@
         <section class="page-section">
             <div class="container">
                 <div class="product-item">
-                    <div class="product-item-title d-flex">
+                    <div class="product-item-title d-flex mb-3">
                         <div class="bg-faded p-5 d-flex ms-auto rounded">
                             <h2 class="section-heading mb-0">
                                 <span class="section-heading-upper">Nuestro próximo objetivo</span>
