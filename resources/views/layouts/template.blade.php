@@ -14,6 +14,13 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+
+        <!--Pantalla de bloqueo responsive-->
+        <div id="verticalMessage">
+            <img src="assets/img/phoenix.png" alt="Imagen de advertencia">
+            <h3 class="my-5">Por favor, gire su dispositivo a posición horizontal</h3>
+        </div>
+
         <header>
             <h1 class="site-heading text-center text-faded d-none d-lg-block">
                 <span class="site-heading-upper text-yellow mb-3">Transmite tu conocimiento</span>
@@ -74,10 +81,10 @@
                             <div id="scrollToTop" class="intro-button mx-auto" style="display: none;">
                                 <a class="btn btn-primary btn-xl" href="#!">¡Volver arriba!</a>
                             </div>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
-            </div>           
+            </div>
         </section>
         <footer class="footer text-faded-footer text-center py-4">
             <div class="container"><p class="m-0 small">Copyright &copy; Banco de Libros Fénix 2023</p></div>
@@ -85,6 +92,34 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+            verifyOrientation();
+
+            window.addEventListener('orientationchange', function() {
+                verifyOrientation();
+            });
+        });
+
+        function verifyOrientation() {
+            var orientation = window.orientation;
+
+            if (orientation === 0 && isMobileDevice()) {
+                // Móvil en posición vertical
+                $("#verticalMessage").show();
+            } else {
+                $("#verticalMessage").hide();
+            }
+        }
+
+        function isMobileDevice() {
+            // Verifica si el dispositivo es móvil (ancho menor que 1024)
+            return window.innerWidth < 768;
+        }
+
+        </script>
         <script src="js/scripts.js"></script>
     </body>
 </html>
